@@ -4,6 +4,7 @@
 //
 //  Created by EBRU KÖSE on 8.01.2025.
 //
+import SwiftUI
 
 import Foundation
 
@@ -24,3 +25,4 @@ struct Alarm: Identifiable, Codable {
     let name: String
     let value: Int
 }
+

@@ -36,7 +36,7 @@ struct Screen6: View {
                                         .frame(width: 10, height: 10) // Tamamen sola hizalama
                                       
                                 
-                            }
+                            }.buttonStyle(.plain)
                             
                             // Mevcut ofis adı
                             Text(offices[currentIndex].rooms[1].name)
@@ -70,7 +70,8 @@ struct Screen6: View {
                                     HStack {
                                         Rectangle()
                                             .fill(getColor(for: alarm.name))
-                                            .frame(width: 10, height: 20)
+                                            .frame(width:6, height: 18)
+                                            .cornerRadius(2)
                                         Text("\(alarm.value) \(alarm.name)")
                                             .font(.body)
                                             .foregroundColor(.black)
@@ -88,7 +89,8 @@ struct Screen6: View {
                                     HStack {
                                         Rectangle()
                                             .fill(getColor(for: alarm.name))
-                                            .frame(width: 10, height: 20)
+                                            .frame(width:6, height: 18)
+                                            .cornerRadius(2)
                                         Text("\(alarm.value) \(alarm.name)")
                                             .font(.body)
                                             .foregroundColor(.black)
@@ -106,20 +108,20 @@ struct Screen6: View {
                     .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
                     
                     // Önceki ve Sonraki düğmeleri
-                    HStack {
+                    HStack(spacing:30) {
                         NavigationLink(destination: Screen5()){
                             VStack{
                                 Text("Previous")
                                     .font(.body)
-                                    .lineLimit(1)
                                     .minimumScaleFactor(0.5)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.shade3)
                                     .padding()
                                     .frame(width: 60, height: 20)
-                                    .background(Color.black.opacity(0.5))
+                                    .background(.colorWhite)
                                     .cornerRadius(5)
-                            }.padding(.top, -20)
-                        }
+                            }.padding(.top,0)
+                            
+                        }.buttonStyle(.plain)
                         
                         
                             VStack {
@@ -129,10 +131,10 @@ struct Screen6: View {
                                     .foregroundColor(.white)
                                     .padding(8)
                                     .frame(width: 60, height: 20)
-                                    .background(Color.blue)
+                                    .background(.shade3)
                                     .cornerRadius(5)
                             }
-                            .padding(.top, -20)
+                            .padding(.top, 0)
                         
                     }
                 }}

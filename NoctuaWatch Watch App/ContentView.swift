@@ -28,7 +28,7 @@ struct ContentView: View {
                 // Instruction Card
                 NavigationLink(destination: Screen2()) {
                     VStack(spacing: 10) {
-                        Image(systemName: "exclamationmark.circle")
+                        Image( "nearby_error")
                             .font(.body)
                             .foregroundColor(.gray)
                         VStack(spacing: 3) {

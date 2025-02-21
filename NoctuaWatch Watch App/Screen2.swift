@@ -51,7 +51,7 @@ struct Screen2: View {
                         }
                     
                     // Diğer metin alanı
-                    Text("Checking selected areas")
+                    Text(UserMessages.areasMessage)
                         .font(.body)
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)

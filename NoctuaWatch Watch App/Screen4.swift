@@ -5,6 +5,7 @@
 //  Created by EBRU KÖSE on 8.01.2025.
 //
 
+
 import SwiftUI
 
 struct Screen4: View {
@@ -29,7 +30,9 @@ struct Screen4: View {
                                 Image(systemName: "arrow.backward")
                                     .foregroundColor(.black)
                                     .font(.system(size: 15)) // Simgeyi küçültme
-                                .frame(width: 10, height: 10) }// Tamamen sola hizalama
+                                .frame(width: 10, height: 10) }
+                            .buttonStyle(.plain)
+                            // Tamamen sola hizalama
                             // Mevcut ofis adı
                             Text(offices[currentIndex].name)
                                 .font(.subheadline)
@@ -39,7 +42,7 @@ struct Screen4: View {
                                 .minimumScaleFactor(0.5)
                                 .frame(maxWidth: .infinity) // Bu, başlık kısmının genişlemesine izin veriyor
                             // Building iconu
-                            Image(systemName: "building.2")
+                            Image("business")
                                 .foregroundColor(.black)
                                 .font(.system(size: 18)) // Simgeyi küçültme yaptım
                                 .frame(width: 30, height: 30) // Sabit genişlik ve yükseklik verdim
@@ -57,7 +60,8 @@ struct Screen4: View {
                                     HStack {
                                         Rectangle()
                                             .fill(getColor(for: alarm.name))
-                                            .frame(width: 10, height: 20)
+                                            .frame(width:6, height: 18)
+                                            .cornerRadius(2)
                                         Text("\(alarm.value) \(alarm.name)")
                                             .font(.body)
                                             .foregroundColor(.black)
@@ -71,34 +75,35 @@ struct Screen4: View {
                                     HStack {
                                         Rectangle()
                                             .fill(getColor(for: alarm.name))
-                                            .frame(width: 10, height: 20)
+                                            .frame(width:6, height: 18)
+                                            .cornerRadius(2)
                                         Text("\(alarm.value) \(alarm.name)")
                                             .font(.body)
                                             .foregroundColor(.black)
                                             .lineLimit(1)
                                             .minimumScaleFactor(0.5)
                                         Spacer()}}}}}
-                
+                    
                     .padding()
                     .background(Color.white)
                     .cornerRadius(12)
                     .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
                     
                     // Önceki ve Sonraki düğmeleri
-                    HStack {
+                    HStack(spacing:30) {
                         NavigationLink(destination: Screen6()){
                             VStack{
                                 Text("Previous")
                                     .font(.body)
                                     .lineLimit(1)
                                     .minimumScaleFactor(0.5)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                                     .padding()
                                     .frame(width: 60, height: 20)
-                                    .background(Color.black.opacity(0.5))
+                                    .background(.colorWhite)
                                     .cornerRadius(5)
-                            }.padding(.top, -20)
-                        }
+                            }.padding(.top, 0)
+                        }.buttonStyle(.plain)
                         NavigationLink(destination: Screen5()){
                             VStack {
                                 Text("Next")
@@ -107,9 +112,13 @@ struct Screen4: View {
                                     .foregroundColor(.white)
                                     .padding(8)
                                     .frame(width: 60, height: 20)
-                                    .background(Color.blue)
-                                    .cornerRadius(5)}
-            .padding(.top, -20)}}}}
+                                    .background(.shade3)
+                                .cornerRadius(5)}
+                            .padding(.top, 0)
+                        }.buttonStyle(.plain)
+                    }
+                }
+            }
             .padding()
             .background(Color.white) // Arka plan beyaz
             .onAppear {
@@ -120,12 +129,12 @@ struct Screen4: View {
     // Alarm isimlerine göre renk döndürme fonksiyonu
 private func getColor(for alarmName: String) -> Color {
     switch alarmName {
-    case "Fine": return .green
-    case "Connection": return .blue
-    case "Critical": return .red
-    case "Warning": return .yellow
-    case "Alert": return .orange
-    case "Passive": return .gray
+    case "Fine": return .colorGreen
+    case "Connection": return .colorBlue
+    case "Critical": return .colorRed
+    case "Warning": return .colorYellow
+    case "Alert": return .colorOrange
+    case "Passive": return .colorBrown
         default: return .black}}
     
 
@@ -134,3 +143,4 @@ private func getColor(for alarmName: String) -> Color {
 #Preview {
     Screen4()
 }
+

@@ -58,7 +58,7 @@ struct ContentView: View {
                             Image(systemName: "desktopcomputer")
                                 .font(.body)
                                 .foregroundColor(.gray)
-                            Text("Monitor")
+                            Text(ButtonNames.monitorButtonName)
                                 .font(.body)
                                 .foregroundColor(.gray)
                         }.frame(maxWidth: 500)
@@ -70,7 +70,7 @@ struct ContentView: View {
                             Image(systemName:"circle.dashed" /*"arrow.clockwise"*/)
                                 .font(.body)
                                 .foregroundColor(.gray)
-                            Text("Summary")
+                            Text(ButtonNames.summaryButtonName)
                                 
                                 .font(.body)
                                 .foregroundColor(.gray)

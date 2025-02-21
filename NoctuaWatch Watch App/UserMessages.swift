@@ -12,3 +12,9 @@ struct UserMessages: Codable{
     
     
 }
+struct ButtonNames: Codable{
+    static let monitorButtonName = "Monitor"
+    static let summaryButtonName = "Summary"
+    static let nextButtonName = "Next"
+    static let previousButtonName = "Previous"
+}

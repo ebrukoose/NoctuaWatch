@@ -93,7 +93,7 @@ struct Screen3: View {
                             Image("monitor")
                                 .font(.body)
                                 .foregroundColor(.black)
-                            Text("Monitor")
+                            Text(ButtonNames.monitorButtonName)
                                 .font(.body)
                                 .foregroundColor(.black)
                         }
@@ -109,7 +109,7 @@ struct Screen3: View {
                             Image("data_usage")
                                 .font(.body)
                                 .foregroundColor(.black)
-                            Text("Summary")
+                            Text(ButtonNames.summaryButtonName)
                                 .font(.body)
                                 .foregroundColor(.black)
                         }

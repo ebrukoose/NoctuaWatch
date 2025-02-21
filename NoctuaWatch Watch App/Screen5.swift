@@ -18,10 +18,10 @@ struct Screen5: View {
             VStack(spacing: 8) {
                 // Başlık ve ofis adı
                 if isLoading {
-                    ProgressView("Loading...")
+                    ProgressView(UserMessages.loadingMessage)
                         .font(.headline)
                 } else if offices.isEmpty {
-                    Text("No offices available.")
+                    Text(UserMessages.noOfficeMessage)
                         .font(.headline)
                 } else {
                     VStack {
@@ -112,7 +112,7 @@ struct Screen5: View {
                     HStack (spacing: 30){
                         NavigationLink(destination: Screen4()){
                             VStack{
-                                Text("Previous")
+                                Text(ButtonNames.previousButtonName)
                                     .font(.body)
                                     .lineLimit(1)
                                     .minimumScaleFactor(0.5)
@@ -125,7 +125,7 @@ struct Screen5: View {
                         }.buttonStyle(.plain)
                         NavigationLink(destination: Screen6()){
                             VStack {
-                                Text("Next")
+                                Text(ButtonNames.nextButtonName)
                                     .font(.body)
                                     .minimumScaleFactor(0.5)
                                     .foregroundColor(.white)
